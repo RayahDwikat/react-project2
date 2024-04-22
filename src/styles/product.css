@@ -1,0 +1,20 @@
+.product-page{
+padding-top: 100px;
+padding-left: 5%;
+
+}
+.arrow{
+    font-size: larger;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .product-page{
+
+    }
+}
+@media only screen and (max-width: 480px) {
+    .product-page{
+
+    }
+}
