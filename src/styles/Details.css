@@ -1,0 +1,132 @@
+.product-container {
+    display: flex;
+    margin-top: 3rem;
+  }
+  
+  .product-image {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .product-details {
+    width: 500px;
+    height: auto;
+  }
+  
+  .product-title {
+    margin-left: 1.25rem;
+    color:#17183B; 
+    margin-bottom:50px;   
+  }
+  .price-rate{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-left: 35px;
+   
+  }
+  .product-rating {
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    color: #17183B;
+}
+  
+  .product-price {
+    font-size: 1rem; 
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    margin-left: -80px;    
+  }
+  
+  .product-description {
+    font-size: 0.9rem;
+    margin-left: 1.25rem;
+    color:  #17183B;
+  }
+ .add-to-cart-container{
+  display: flex;
+  margin-left: 1.25rem;
+  width: 70%;
+  justify-content: space-around;
+ }
+  .quantity-btn {
+    margin-right: 14px;
+    font-size: 1.25rem;
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: #A2A3B1;
+    
+  }
+  .minus-icon{
+    margin-right: 1.25rem;
+  }
+  .plus-icon{
+    margin-left: 1.25rempx;
+
+  }
+  .addToCard{
+    background-color:#3AA39F;
+    width: 120px;
+    height: 50px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+  .styledText{
+    justify-content: center;
+    align-items: center;
+    margin-left: 1.25rem;
+    margin-top: 12px;
+    
+
+  }
+  .full-rate{
+    display: flex;
+  }
+  .rating{
+    margin-left: 7px;
+  }
+  .count{
+    color: #D1D1D8;
+    margin-left: 2px;
+  }
+  .content{
+    color:#17183B;
+    font-size: .9rem;
+    margin-left: 1.25rem;
+    margin-top: 15px;
+  }
+  .icons{
+    margin-top: 40px;
+  }
+ .wishlist{
+  color: #3AA39F;
+  margin-left: 1.25rem;
+ }
+  .add-to-wishlist{
+    text-decoration: none;
+    color:#3AA39F;
+    margin-left: 10px;
+  }
+  .heart-icon{
+    color:#3AA39F;
+  }
+  .product-icons{
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .social-icons{
+    display: flex;
+    width: 136px;
+    height: 16px;
+    justify-content: space-around;
+  }
