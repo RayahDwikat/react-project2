@@ -1,0 +1,13 @@
+.order-summary{
+    border : solid 1px rgba(209, 209, 216, 1);
+    margin-left: 40px;
+    width: 400px;
+    height:500px;
+    padding-left: 20px;
+    margin-top: 200px;
+
+}
+h2{
+    display: flex;
+    margin-right: -300px;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState , useRef } from "react";
 import '../styles/headerStyle.css';
 import { IconButton } from "../components/IconButton";
 import ProductsMenu from "../components/ProductsMenu";
+import { Link } from "react-router-dom";
 export default function Header(){
 
   const[isMenuOpen , setIsMenuOpen] = useState(false);
@@ -38,11 +39,12 @@ export default function Header(){
   }, []);
 
     return(
-        <div className="header">
-            
+        <div className="header"> 
+         <Link className="home-link" component={Link} to="/react-project2">
            <div className="logo">
             <h2>Cozy®</h2>
            </div>
+           </Link>
            <div className="pages" >
             <h4>SHOP</h4>
             <h4>COLLECTIVE</h4>
@@ -50,23 +52,21 @@ export default function Header(){
             <h4>ABOUT US</h4>
             <h4>CONTACT</h4>
            </div>
-
+          
            <div className="icons">
            <IconButton
             iconName="menu-outline" onClick={toggleMenu}
             />
             {isMenuOpen && <ProductsMenu isOpen={isMenuOpen} menuData={menuData} />}
-
             <IconButton
               iconName="search-outline" 
             />
-            
             <div className="divider"></div>
             <IconButton 
             iconName ="cart-outline"/>
           </div>
-
        </div>
+   
    
     );
 

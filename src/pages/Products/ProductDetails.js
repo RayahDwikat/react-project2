@@ -1,15 +1,16 @@
-import React from 'react';
+import React , {useContext}from 'react';
 import Details from "../../styles/Details.css";
 import { NavLink } from 'react-router-dom';
 import { IconButton } from '../../components/IconButton';
 import RatingStar from '../../components/RatingStar';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../hooks/CartContext';
 const ProductDetails = ({ product }) => {
   const [amount, setAmount] = useState(1);
 
   const add = () => {
-    const newItem = { title: product.title, price: product.price };
+    const newItem = { title: product.title, image:product.image, amount:product.amount, price: product.price };
     console.log('Product added to cart:', newItem);
   };
   const increaseAmount = (amount) => {
@@ -22,29 +23,41 @@ const ProductDetails = ({ product }) => {
       setAmount(0);
     }
   };
-  const addToCart = () => {
+  const {addToCart} = useContext(CartContext);
+  const handleAddToCart = () => {
     const newItem = {
       title: product.title,
       price: product.price,
-      amount,
+      amount: amount,
+      image:product.image
 
     };
+    addToCart(newItem);
     console.log('Product added to cart:', newItem);
 
+  
   };
+
 
   return (
     <div className="product-container">
 
       <div className="product-details">
-        <h1 className="product-title">{product.title}</h1>
-        <div className='price-rate'>
-          <p className="product-price">$ {product.price}</p>
-          <p className="product-rating">
-            <RatingStar rating={product.rating && product.rating.rate} count={product.rating.count} color="#FFC41F" />
-          </p>
-        </div>
-          <p className="product-description">{product.description}</p>
+
+        {product ? (
+          <>
+            <h1 className="product-title">{product.title}</h1>
+            <div className="price-rate">
+              <p className="product-price">$ {product.price}</p>
+              <p className="product-rating">
+                <RatingStar rating={product.rating && product.rating.rate} count={product.rating && product.rating.count} color="#FFC41F" />
+              </p>
+            </div>
+            <p className="product-description">{product.description}</p>
+          </>
+        ) : (
+          <p>Loading.....</p>
+        )}
         <div className="add-to-cart-container">
 
           <button className='quantity-btn'>
@@ -62,29 +75,29 @@ const ProductDetails = ({ product }) => {
               +
             </span>
           </button>
-          <NavLink to="/cart" className="addToCard" onClick={addToCart}>
+          <NavLink to="/cartpage" className="addToCard" onClick={handleAddToCart}>
             <div className="styledText">Add to Cart</div>
           </NavLink>
 
         </div>
         <div className='content'>Free 3-5 day shipping • Tool-free assembly • 30-day trial
+        </div>
+        <div className='product-icons'>
+          <div className='wishlist'>
+            <IconButton iconName="heart" className="heart-icon" />
+            <Link to="/wishlist" className="add-to-wishlist">
+              Add to Wishlist
+            </Link>
+          </div>
+          <div className='social-icons'>
+            <IconButton iconName="logo-facebook" />
+            <IconButton iconName="logo-twitter" />
+            <IconButton iconName="logo-pinterest" />
+            <IconButton iconName="logo-instagram" />
+          </div>
+        </div>
       </div>
-      <div className='product-icons'>
-      <div className='wishlist'>
-      <IconButton iconName="heart" className="heart-icon"/>
-        <Link to="/wishlist" className="add-to-wishlist">
-          Add to Wishlist
-        </Link>
-      </div>
-      <div className='social-icons'>
-        <IconButton iconName="logo-facebook"/>
-        <IconButton iconName="logo-twitter"/>
-        <IconButton iconName="logo-pinterest"/>
-        <IconButton iconName="logo-instagram"/>
-      </div>
-      </div>
-      </div>
-      
+
     </div>
   );
 };

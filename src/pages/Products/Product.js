@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Gallary from "../Products/Gallary";
 import ProductDetails from "./ProductDetails";
+
 const Product = () => {
     const [product, setProduct] = useState(null);
-    const [selectedColor, setSelectedColor] = useState(null); 
     const {id} = useParams();
+    
 
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${id}`)
@@ -17,26 +18,36 @@ const Product = () => {
             .catch((error) => console.error("Error Fetching Data", error));
 
     }, [id]);
-
+   
+   
     return (
+
         <div className="product-page">
             <div className="detailsSection">
             <div className="arrow">
-                <IconButton iconName="arrow-back-outline" />
+            <Link to="/react-project2"> 
+              <IconButton iconName="arrow-back-outline" />
+            </Link>
             </div>
         <div className="nav-link">
             <nav>
-        <Link to="#" className="productCategory"> {product.category}</Link> / <Link to="#" className="productTitle">{product.title}</Link>
+        {/* <Link to="#" className="productCategory"> {product.category}</Link> / <Link to="#" className="productTitle">{product.title}</Link> */}
+        {product && (
+      <>
+        <span className="productCategory">{product.category}</span> /{' '}
+        <span className="productTitle">{product.title}</span>
+      </>
+    )}
             </nav>
         </div>
         </div>
+        
       <div className="sections">
-        <ProductDetails product={product} /> 
-        {/* {product && <Gallary images={product.image} product={product} />}                  */}
+        <ProductDetails product={product}/> 
         <Gallary id={id}/>
         </div>
          </div>
-            
+               
     );
 }
 export default Product;

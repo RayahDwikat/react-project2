@@ -1,0 +1,35 @@
+.address-options{
+ 
+}
+.address-component{
+    width: 600px;
+    margin-left: 30px;
+
+}
+.address-component h2{
+    margin-left: -15px;
+}
+.address-option{
+       display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+   
+      
+}
+.add-new-address{
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: 
+    rgba(58, 163, 159, 1);
+}
+.address-option label {
+  
+}
+.address-option button {
+    color: red;
+    border: none;
+    background-color: transparent; 
+    cursor: pointer; 
+  }

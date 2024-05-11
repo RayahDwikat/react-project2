@@ -1,0 +1,14 @@
+.checkout-page{
+
+}
+.checkout{
+display: flex;
+justify-content: space-between;
+}
+.address-checkout{
+    margin-top: 10%;
+}
+.order-summary-checkout{
+    margin-top:-5%;
+    margin-right: 100px;
+}
