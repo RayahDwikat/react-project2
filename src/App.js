@@ -24,8 +24,8 @@ function App() {
 
 
       <Route path="react-project2/products/:id"  element={<Product products={products[0]}/>}/>
-      <Route path="/cartpage" element={<CartPage />} />
-      <Route path="/checkoutpage" element={<CheckoutPage/>} />
+      <Route path="/react-project2/cartpage" element={<CartPage />} />
+      <Route path="react-project2/checkoutpage" element={<CheckoutPage/>} />
 
 
         </Routes>

@@ -75,7 +75,7 @@ const ProductDetails = ({ product }) => {
               +
             </span>
           </button>
-          <NavLink to="/cartpage" className="addToCard" onClick={handleAddToCart}>
+          <NavLink to="/react-project2/cartpage" className="addToCard" onClick={handleAddToCart}>
             <div className="styledText">Add to Cart</div>
           </NavLink>
 
